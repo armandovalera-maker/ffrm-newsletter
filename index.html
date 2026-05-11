@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newsletter FFRM</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: transparent;
+    }
+
+    .ffrm-card {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      background: #fff;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,.15);
+    }
+
+    .ffrm-left {
+      padding: 60px;
+      color: #fff;
+      background:
+        linear-gradient(rgba(139,0,24,.88), rgba(139,0,24,.86)),
+        url("https://drive.google.com/thumbnail?id=1ngoHbeyP8BFDjLWIP_944F1ymleSb_-q&sz=w1800") center/cover no-repeat;
+    }
+
+    .ffrm-left img { width: 82px; margin-bottom: 70px; }
+    .ffrm-left h1 { font-size: 46px; margin: 0 0 22px; line-height: 1.1; }
+    .ffrm-line { width: 66px; height: 4px; background: #d6b15e; margin-bottom: 28px; }
+    .ffrm-left p { font-size: 18px; line-height: 1.6; margin-bottom: 44px; }
+
+    .ffrm-benefits { display: flex; justify-content: space-between; gap: 18px; }
+    .ffrm-benefit { text-align: center; font-size: 14px; }
+    .ffrm-icon { display: block; font-size: 28px; color: #d6b15e; margin-bottom: 10px; }
+
+    .ffrm-right { padding: 56px; }
+    .ffrm-right h2 { margin: 0 0 28px; font-size: 36px; color: #111827; }
+
+    .ffrm-input {
+      width: 100%;
+      height: 56px;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 0 16px;
+      margin-bottom: 14px;
+      font-size: 15px;
+    }
+    .ffrm-input:focus { outline: none; border-color: #8b0018; }
+
+    .ffrm-check-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin: 20px 0;
+      cursor: pointer;
+      font-size: 14px;
+      color: #374151;
+      line-height: 1.4;
+      position: relative;
+    }
+
+    .ffrm-check-row input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    .ffrm-box {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      min-width: 24px;
+      border: 2px solid #8b0018;
+      border-radius: 6px;
+      background-color: #fff;
+      transition: 0.2s ease;
+      margin-top: -2px;
+    }
+
+    .ffrm-check-row input:checked + .ffrm-box {
+      background-color: #8b0018;
+    }
+
+    .ffrm-check-row input:checked + .ffrm-box::after {
+      content: "";
+      width: 6px;
+      height: 11px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      margin-bottom: 2px;
+    }
+
+    .ffrm-check-row a {
+      color: #8b0018;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    .ffrm-btn {
+      width: 100%;
+      height: 58px;
+      border: 0;
+      border-radius: 14px;
+      background: #8b0018;
+      color: #fff;
+      font-weight: 800;
+      font-size: 16px;
+      cursor: pointer;
+      transition: .2s ease;
+      margin-top: 10px;
+    }
+    .ffrm-btn:hover { background: #650012; }
+
+    #ffrm-mensaje-estado {
+      margin-top: 14px;
+      font-weight: bold;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .ffrm-legal {
+      margin-top: 24px;
+      padding: 16px;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      background: #f9fafb;
+      font-size: 11px;
+      color: #4b5563;
+      line-height: 1.5;
+      max-height: 150px;
+      overflow-y: auto;
+    }
+    .ffrm-legal strong { color: #111827; }
+    .ffrm-legal a { color: #8b0018; text-decoration: underline; font-weight: bold; }
+
+    @media (max-width: 900px) {
+      .ffrm-card { grid-template-columns: 1fr; }
+      .ffrm-left, .ffrm-right { padding: 34px 26px; }
+      .ffrm-left h1 { font-size: 38px; }
+    }
+
+    @media (max-width: 768px) {
+      .ffrm-left h1 { font-size: 34px; }
+      .ffrm-left p { font-size: 16px; }
+      .ffrm-right h2 { font-size: 30px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="ffrm-card">
+  <div class="ffrm-left">
+    <img src="https://drive.google.com/thumbnail?id=1HGxWffOpbl6NW8bbDoEDoZ6W-feyxurd&sz=w300" alt="FFRM Logo">
+    <h1>Únete a nuestra comunidad</h1>
+    <div class="ffrm-line"></div>
+    <p>Recibe novedades, información y toda la actualidad del fútbol de la Región de Murcia directamente en tu email.</p>
+    <div class="ffrm-benefits">
+      <div class="ffrm-benefit"><span class="ffrm-icon">▦</span><div>Novedades<br>y noticias</div></div>
+      <div class="ffrm-benefit"><span class="ffrm-icon">▣</span><div>Eventos y<br>competiciones</div></div>
+      <div class="ffrm-benefit"><span class="ffrm-icon">✦</span><div>Sorteos y<br>ventajas</div></div>
+    </div>
+  </div>
+
+  <div class="ffrm-right">
+    <h2>Suscríbete a la newsletter</h2>
+
+    <div id="ffrm-form-registro">
+      <input class="ffrm-input" type="text" id="ffrm-nombre" placeholder="Nombre (opcional)">
+      <input class="ffrm-input" type="email" id="ffrm-email" placeholder="Email *">
+
+      <label class="ffrm-check-row">
+        <input type="checkbox" id="ffrm-privacidad">
+        <span class="ffrm-box"></span>
+        <span>He leído y acepto la <a href="https://www.ffrm.es/pnfg/NNws_ShwNewDup?codigo=1059039&cod_primaria=3001821&cod_secundaria=3001821" target="_blank">Política de Privacidad</a> y solicito suscribirme a la newsletter de la FFRM. *</span>
+      </label>
+
+      <label class="ffrm-check-row">
+        <input type="checkbox" id="ffrm-publicidad">
+        <span class="ffrm-box"></span>
+        <span>Acepto recibir promociones, sorteos, ventajas exclusivas y comunicaciones comerciales de la FFRM y, en su caso, de sus patrocinadores o colaboradores.</span>
+      </label>
+
+      <label class="ffrm-check-row">
+        <input type="checkbox" id="ffrm-sorteo">
+        <span class="ffrm-box"></span>
+        <span>Quiero participar en el sorteo de la camiseta y acepto sus <a href="https://www.ffrm.es/pnfg/NPortada?CodPortada=1000311" target="_blank">bases legales</a>.</span>
+      </label>
+
+      <button class="ffrm-btn" id="ffrm-btn-enviar">Suscribirme</button>
+      <p id="ffrm-mensaje-estado"></p>
+
+      <div class="ffrm-legal">
+        <p><strong>Información básica sobre protección de datos</strong></p>
+        <p><strong>Responsable:</strong> FEDERACIÓN DE FÚTBOL DE LA REGIÓN DE MURCIA.</p>
+        <p><strong>Finalidad:</strong> Gestionar su suscripción a la newsletter de la FFRM y remitirle noticias, actividades y eventos de la Federación. Si marca la casilla correspondiente, también podremos enviarle promociones, sorteos, ventajas exclusivas y comunicaciones comerciales relacionadas con la FFRM y, en su caso, con sus patrocinadores o colaboradores. Si marca la casilla correspondiente, también podrá participar en el sorteo indicado en el formulario.</p>
+        <p><strong>Legitimación:</strong> Consentimiento del interesado.</p>
+        <p><strong>Destinatarios:</strong> No se cederán datos a terceros salvo obligación legal o, en su caso, proveedores necesarios para la gestión del envío y/o del sorteo, actuando como encargados del tratamiento.</p>
+        <p><strong>Derechos:</strong> Puede acceder, rectificar y suprimir sus datos, así como solicitar la limitación, oponerse al tratamiento y portar sus datos, enviando un correo a dpd@ffrm.es. También puede retirar su consentimiento en cualquier momento.</p>
+        <p><strong>Información adicional:</strong> Puede consultar la información completa en nuestra <a href="https://www.ffrm.es/pnfg/NNws_ShwNewDup?codigo=1059039&cod_primaria=3001821&cod_secundaria=3001821" target="_blank">Política de Privacidad</a>.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('ffrm-btn-enviar').addEventListener('click', function () {
+    var mensaje = document.getElementById('ffrm-mensaje-estado');
+    var nombre = document.getElementById('ffrm-nombre').value.trim();
+    var email = document.getElementById('ffrm-email').value.trim();
+    var privChecked = document.getElementById('ffrm-privacidad').checked;
+
+    if (!email || !privChecked) {
+      mensaje.style.color = '#b91c1c';
+      mensaje.textContent = 'Debes introducir un email válido y aceptar la Política de Privacidad.';
+      return;
+    }
+
+    mensaje.style.color = '#4b5563';
+    mensaje.textContent = 'Enviando...';
+
+    fetch('https://script.google.com/macros/s/AKfycbxpq9ZjGrzT1TSzjoZUQr0ZTsb0rVXdAREieeJ8mO2RjBOe9h78jC6S3amTEmNJP09iSQ/exec', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify({
+        nombre: nombre,
+        email: email,
+        privacidad: privChecked,
+        publicidad: document.getElementById('ffrm-publicidad').checked,
+        sorteo: document.getElementById('ffrm-sorteo').checked,
+        userAgent: navigator.userAgent
+      })
+    }).then(function () {
+      mensaje.style.color = '#15803d';
+      mensaje.textContent = 'Suscripción realizada correctamente.';
+      document.getElementById('ffrm-nombre').value = '';
+      document.getElementById('ffrm-email').value = '';
+      document.getElementById('ffrm-privacidad').checked = false;
+      document.getElementById('ffrm-publicidad').checked = false;
+      document.getElementById('ffrm-sorteo').checked = false;
+    }).catch(function () {
+      mensaje.style.color = '#b91c1c';
+      mensaje.textContent = 'Ha ocurrido un error. Inténtalo de nuevo.';
+    });
+  });
+</script>
+
+</body>
+</html>
