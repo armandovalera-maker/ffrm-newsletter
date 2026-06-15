@@ -113,8 +113,7 @@
     }
 
     .ffrm-fecha-nacimiento {
-      display: none;
-      margin: -6px 0 14px 0;
+      margin: 0 0 14px 0;
       padding: 16px;
       background: #f9fafb;
       border: 1px solid #e5e7eb;
@@ -147,6 +146,17 @@
       font-size: 13px;
       margin-top: 6px;
       display: none;
+    }
+
+    .ffrm-aviso-envio {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fef9ee;
+      border: 1px solid #d6b15e;
+      border-radius: 14px;
+      font-size: 14px;
+      color: #374151;
+      line-height: 1.5;
     }
 
     .ffrm-btn {
@@ -206,7 +216,7 @@
     <img src="https://drive.google.com/thumbnail?id=1HGxWffOpbl6NW8bbDoEDoZ6W-feyxurd&sz=w300" alt="FFRM Logo">
     <h1>Únete a nuestra comunidad</h1>
     <div class="ffrm-line"></div>
-    <p>Recibe novedades, información y toda la actualidad del fútbol de la Región de Murcia directamente en tu email.</p>
+    <p>Recibe novedades, información y toda la actualidad del fútbol de la Región de Murcia y de nuestras entidades patrocinadoras directamente en tu email.</p>
     <div class="ffrm-benefits">
       <div class="ffrm-benefit"><span class="ffrm-icon">▦</span><div>Novedades<br>y noticias</div></div>
       <div class="ffrm-benefit"><span class="ffrm-icon">▣</span><div>Eventos y<br>competiciones</div></div>
@@ -217,27 +227,11 @@
   <div class="ffrm-right">
     <h2>Suscríbete a la newsletter</h2>
 
+    <p style="font-size:15px; color:#374151; line-height:1.6; margin-bottom:24px;">Déjanos tus datos para recibir información comercial y entrarás en el sorteo de una camiseta de la selección. El sorteo se realizará únicamente entre las personas que se registren para recibir estas comunicaciones.</p>
+
     <div id="ffrm-form-registro">
       <input class="ffrm-input" type="text" id="ffrm-nombre" placeholder="Nombre (opcional)">
       <input class="ffrm-input" type="email" id="ffrm-email" placeholder="Email *">
-
-      <label class="ffrm-check-row">
-        <input type="checkbox" id="ffrm-privacidad">
-        <span class="ffrm-box"></span>
-        <span>He leído y acepto la <a href="https://www.ffrm.es/pnfg/NNws_ShwNewDup?codigo=1059039&cod_primaria=3001821&cod_secundaria=3001821" target="_blank">Política de Privacidad</a> y solicito suscribirme a la newsletter de la FFRM. *</span>
-      </label>
-
-      <label class="ffrm-check-row">
-        <input type="checkbox" id="ffrm-publicidad">
-        <span class="ffrm-box"></span>
-        <span>Acepto recibir promociones, sorteos, ventajas exclusivas y comunicaciones comerciales de la FFRM y, en su caso, de sus patrocinadores o colaboradores.</span>
-      </label>
-
-      <label class="ffrm-check-row">
-        <input type="checkbox" id="ffrm-sorteo">
-        <span class="ffrm-box"></span>
-        <span>Quiero participar en el sorteo de la camiseta y acepto sus <a href="https://www.ffrm.es/pnfg/NPortada?CodPortada=1000311" target="_blank">bases legales</a>.</span>
-      </label>
 
       <div class="ffrm-fecha-nacimiento" id="ffrm-fecha-container">
         <label for="ffrm-fecha-nac">Fecha de nacimiento (debes ser mayor de 18 años para participar en el sorteo) *</label>
@@ -245,36 +239,34 @@
         <p class="ffrm-edad-error" id="ffrm-edad-error"></p>
       </div>
 
+      <div class="ffrm-aviso-envio">
+        Al enviar este formulario, solicitas recibir información comercial de la Federación de Fútbol de la Región de Murcia y, por ello, participarás en el sorteo de cinco camisetas oficiales de la selección.
+      </div>
+
+      <label class="ffrm-check-row">
+        <input type="checkbox" id="ffrm-privacidad">
+        <span class="ffrm-box"></span>
+        <span>He leído y acepto la <a href="https://www.ffrm.es/pnfg/NNws_ShwNewDup?codigo=1059039&cod_primaria=3001821&cod_secundaria=3001821" target="_blank">Política de Privacidad</a> y las <a href="https://www.ffrm.es/pnfg/NPortada?CodPortada=1000311" target="_blank">bases legales del sorteo</a>. *</span>
+      </label>
+
       <button class="ffrm-btn" id="ffrm-btn-enviar">Suscribirme</button>
       <p id="ffrm-mensaje-estado"></p>
 
       <div class="ffrm-legal">
-        <p><strong>Información básica sobre protección de datos</strong></p>
-        <p><strong>Responsable:</strong> FEDERACIÓN DE FÚTBOL DE LA REGIÓN DE MURCIA.</p>
-        <p><strong>Finalidad:</strong> Gestionar su suscripción a la newsletter de la FFRM y remitirle noticias, actividades y eventos de la Federación. Si marca la casilla correspondiente, también podremos enviarle promociones, sorteos, ventajas exclusivas y comunicaciones comerciales relacionadas con la FFRM y, en su caso, con sus patrocinadores o colaboradores. Si marca la casilla correspondiente, también podrá participar en el sorteo indicado en el formulario.</p>
-        <p><strong>Legitimación:</strong> Consentimiento del interesado.</p>
-        <p><strong>Destinatarios:</strong> No se cederán datos a terceros salvo obligación legal o, en su caso, proveedores necesarios para la gestión del envío y/o del sorteo, actuando como encargados del tratamiento.</p>
-        <p><strong>Derechos:</strong> Puede acceder, rectificar y suprimir sus datos, así como solicitar la limitación, oponerse al tratamiento y portar sus datos, enviando un correo a dpd@ffrm.es. También puede retirar su consentimiento en cualquier momento.</p>
-        <p><strong>Información adicional:</strong> Puede consultar la información completa en nuestra <a href="https://www.ffrm.es/pnfg/NNws_ShwNewDup?codigo=1059039&cod_primaria=3001821&cod_secundaria=3001821" target="_blank">Política de Privacidad</a>.</p>
+        <p><strong>Información básica de protección de datos</strong></p>
+        <p><strong>Responsable:</strong> Federación de Fútbol de la Región de Murcia.</p>
+        <p><strong>Finalidad:</strong> Enviarte información sobre la actualidad del Fútbol, así como sobre los clubes, y las entidades colaboradoras o patrocinadoras de la Federación, a través de correo electrónico.</p>
+        <p><strong>Legitimación:</strong> Tu consentimiento al enviar el formulario.</p>
+        <p><strong>Destinatarios:</strong> No serán comunicados a terceros, salvo obligación legal.</p>
+        <p><strong>Conservación:</strong> Tus datos se conservarán mientras mantengas tu interés en recibir estas comunicaciones y, en su caso, durante los plazos necesarios para atender posibles responsabilidades legales.</p>
+        <p><strong>Derechos:</strong> Puedes acceder, rectificar y suprimir los datos, así como ejercer otros derechos, dirigiéndote a <a href="mailto:dpd@ffrm.es">dpd@ffrm.es</a>.</p>
+        <p><strong>Información adicional:</strong> Consulta la <a href="https://www.ffrm.es/pnfg/NNws_ShwNewDup?codigo=1059039&cod_primaria=3001821&cod_secundaria=3001821" target="_blank">Política de Privacidad</a> y las <a href="https://www.ffrm.es/pnfg/NPortada?CodPortada=1000311" target="_blank">bases del sorteo</a>.</p>
       </div>
     </div>
   </div>
 </div>
 
 <script>
-  // Mostrar/ocultar campo de fecha de nacimiento al marcar sorteo
-  document.getElementById('ffrm-sorteo').addEventListener('change', function () {
-    var container = document.getElementById('ffrm-fecha-container');
-    var errorMsg = document.getElementById('ffrm-edad-error');
-    if (this.checked) {
-      container.style.display = 'block';
-    } else {
-      container.style.display = 'none';
-      errorMsg.style.display = 'none';
-      document.getElementById('ffrm-fecha-nac').value = '';
-    }
-  });
-
   // Función para calcular si es mayor de 18
   function esMayorDeEdad(fechaNac) {
     var hoy = new Date();
@@ -294,32 +286,29 @@
     var nombre = document.getElementById('ffrm-nombre').value.trim();
     var email = document.getElementById('ffrm-email').value.trim();
     var privChecked = document.getElementById('ffrm-privacidad').checked;
-    var sorteoChecked = document.getElementById('ffrm-sorteo').checked;
     var fechaNac = document.getElementById('ffrm-fecha-nac').value;
 
     // Validación básica
     if (!email || !privChecked) {
       mensaje.style.color = '#b91c1c';
-      mensaje.textContent = 'Debes introducir un email válido y aceptar la Política de Privacidad.';
+      mensaje.textContent = 'Debes introducir un email válido y aceptar la Política de Privacidad y las bases legales.';
       return;
     }
 
-    // Validación de edad si participa en el sorteo
-    if (sorteoChecked) {
-      if (!fechaNac) {
-        errorEdad.style.display = 'block';
-        errorEdad.textContent = 'Debes introducir tu fecha de nacimiento para participar en el sorteo.';
-        mensaje.textContent = '';
-        return;
-      }
-      if (!esMayorDeEdad(fechaNac)) {
-        errorEdad.style.display = 'block';
-        errorEdad.textContent = 'Debes ser mayor de 18 años para participar en el sorteo.';
-        mensaje.textContent = '';
-        return;
-      }
-      errorEdad.style.display = 'none';
+    // Validación de fecha de nacimiento
+    if (!fechaNac) {
+      errorEdad.style.display = 'block';
+      errorEdad.textContent = 'Debes introducir tu fecha de nacimiento para participar en el sorteo.';
+      mensaje.textContent = '';
+      return;
     }
+    if (!esMayorDeEdad(fechaNac)) {
+      errorEdad.style.display = 'block';
+      errorEdad.textContent = 'Debes ser mayor de 18 años para participar en el sorteo.';
+      mensaje.textContent = '';
+      return;
+    }
+    errorEdad.style.display = 'none';
 
     mensaje.style.color = '#4b5563';
     mensaje.textContent = 'Enviando...';
@@ -331,22 +320,17 @@
       body: JSON.stringify({
         nombre: nombre,
         email: email,
-        publicidad: document.getElementById('ffrm-publicidad').checked,
-        sorteo: sorteoChecked,
-        fechaNacimiento: sorteoChecked ? fechaNac : '',
+        fechaNacimiento: fechaNac,
         privacidad: privChecked,
         userAgent: navigator.userAgent
       })
     }).then(function () {
       mensaje.style.color = '#15803d';
-      mensaje.textContent = 'Suscripción realizada correctamente.';
+      mensaje.textContent = 'Suscripción realizada correctamente. ¡Ya participas en el sorteo!';
       document.getElementById('ffrm-nombre').value = '';
       document.getElementById('ffrm-email').value = '';
       document.getElementById('ffrm-privacidad').checked = false;
-      document.getElementById('ffrm-publicidad').checked = false;
-      document.getElementById('ffrm-sorteo').checked = false;
       document.getElementById('ffrm-fecha-nac').value = '';
-      document.getElementById('ffrm-fecha-container').style.display = 'none';
     }).catch(function () {
       mensaje.style.color = '#b91c1c';
       mensaje.textContent = 'Ha ocurrido un error. Inténtalo de nuevo.';
